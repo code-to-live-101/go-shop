@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MY SHOPPING GUIDE</title>
+    <meta charset="UTF-8">
+    <title>        VIRTUAL SHOPPING GUIDE</title>
+    <link rel="p"  href="home_deccor.css">
+    <link rel="stylesheet"  href="home_deccor.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript">
+        function cart(){
+            $.ajax({url: "login_form.php"} ,  function(result)
+            {
+                alert(result);
+            })
+
+        }
+    </script>
+
+
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        /* Set the size of the div element that contains the map */
+        #map {
+            height: 500px;  /* The height is 400 pixels */
+            width: 100%;  /* The width is the width of the web page */
+        }
+    </style>
+</head>
+
+
+
+<body>
+<div class="top-nav-bar">
+    <div  class="search-box">
+        <i class="fa fa-bars" id="menu-btn" onclick="openmenu()"> </i>
+        <i class="fa fa-times" id="close-btn" onclick="closemenu()"> </i>
+        <img src="images/shop.jpg" class="logo" alt="">
+        <label>
+            <input type="text" class="from-control">
+        </label>
+
+        <span class="input-group-text"><i class="fa fa-search"></i></span>
+    </div>
+    <!.....inserting menu bar.....!>
+    <section class="menu-bar">
+        <ul>
+            <li><a>home</a></li>
+        </ul>
+
+    </section>
+</div>
+
+<h3>My Google Maps Demo</h3>
+<!--The div element for the map -->
+<div id="map"></div>
+<script>
+    // Initialize and add the map
+    function initMap() {
+        // The location of Uluru
+        var uluru = {lat: -25.344, lng: 131.036};
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById("map"), {zoom: 4, center: uluru});
+        // The marker, positioned at Uluru
+
+    }
+</script>
+<!--Load the API from the specified URL
+* The async attribute allows the browser to render the page while the API loads
+* The key parameter will contain your own API key (which is not needed for this tutorial)
+* The callback parameter executes the initMap() function
+-->
+<script async defer src="https://maps.googleapis.com/maps/api/js?keyAIzaSyDD28vI1yJhvQvo0_D3Y_o2UMqhe-f9sdc&callback=initMap">
+</script>
+
+
+
+<section class="footer">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-3 col-xs-6">
+                <h1>USEFUL LINKS</h1>
+                <p>PRIVACY POLICY</p>
+                <p>TERMS OF USE</p>
+                <p>DELIVERY REQUEST</p>
+                <p>LOCATIONS</p>
+
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <h1>SELLER</h1>
+                <p>SELLER SIGN IN</p>
+                <p>SELLER LOG IN</p>
+
+
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <h1>COMPANY</h1>
+                <p>ABOUT US</p>
+                <p>CONTACT US</p>
+                <p>FOLLOW US</p>
+
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <h1>FOLLOW US ON</h1>
+                <p><i class="fa fa-facebook-official"></i> FACEBOOK</p>
+                <p><i class="fa fa-youtube-play"></i>YOU TUBE</p>
+                <p><i class="fa fa-twitter"></i>TWITTER</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<script type="text/javascript">
+    $('.block2-btn-addcart').each(function(){
+        var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+        $(this).on('click', function(){
+            swal(nameProduct, "is added to cart !", "success");
+        });
+    });
+
+    $('.block2-btn-addwishlist').each(function(){
+        var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+        $(this).on('click', function(){
+            swal(nameProduct, "is added to wishlist !", "success");
+        });
+    });
+</script>
+
+</body>
+</html>
